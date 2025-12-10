@@ -19,18 +19,19 @@ app.get("/health", (req, res) => {
   res.json({ ok: true, status: "server is running" });
 });
 
-// Weather API route
+// 1️⃣ API routes go first
 app.use("/weather", weatherRouter);
 
-// Serve frontend build
+// 2️⃣ Serve frontend build AFTER API routes
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const frontendPath = path.join(__dirname, "../../frontend/dist");
 
-app.use(express.static(path.join(__dirname, "../../frontend/dist")));
+app.use(express.static(frontendPath));
 
-// Catch-all to serve index.html for React routing
-app.get(/.*/, (req, res) => {
-  res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
+// 3️⃣ SPA fallback for React routing (only if not API route)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(frontendPath, "index.html"));
 });
 
 const PORT = process.env.PORT || 5000;
