@@ -1,0 +1,158 @@
+/* ===============================
+   App Container & Fonts
+=============================== */
+.app-container {
+  font-family: 'Press Start 2P', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  gap: 30px;
+  padding: 2rem;
+  min-height: 100vh;
+  background: #181f2e; /* pixel cat dark bg */
+  color: #fff;
+}
+
+/* ===============================
+   Search Bar
+=============================== */
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.search-bar input {
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  border: 2px solid #ff6ec7;
+  border-radius: 8px;
+  background: #222b3c;
+  color: #fff;
+  outline: none;
+}
+
+.search-bar button {
+  padding: 0.5rem 1rem;
+  border: 2px solid #ff6ec7;
+  border-radius: 8px;
+  background: #ff6ec7;
+  color: #181f2e;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.search-bar button:hover {
+  background: #ff9ce0;
+}
+
+/* ===============================
+   Current Weather Card
+=============================== */
+.current-card {
+  background: linear-gradient(145deg, #2a3c5c, #1c2536);
+  border: 2px solid #ff6ec7;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 15px #ff6ec7;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.current-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px #ff9ce0;
+}
+
+.current-card .weather-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.current-card .temp {
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+.current-card .weather-details div {
+  margin-top: 0.5rem;
+}
+
+/* ===============================
+   Forecast Grid & Cards
+=============================== */
+.forecast-grid {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.forecast-card {
+  background: #1c2536;
+  border: 2px solid #ff6ec7;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  min-width: 100px;
+  box-shadow: 0 0 10px #ff6ec7;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.forecast-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #ff9ce0;
+}
+
+.forecast-time {
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.forecast-temp {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+/* ===============================
+   Images & Icons
+=============================== */
+.current-card img,
+.forecast-card img {
+  width: 80px;
+  height: 80px;
+  margin: 10px 0;
+}
+
+
+
+
+
+/* Error card - pixel style */
+.error-card {
+  background: linear-gradient(145deg, #4d1f1f, #2a0f0f);
+  border: 2px solid #ff6ec7;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  color: #ff6ec7;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  min-width: 250px;
+  box-shadow: 0 0 15px #ff6ec7;
+  margin-bottom: 1.5rem;
+  animation: shake 0.3s ease;
+}
+
+/* Optional shake animation for error */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
