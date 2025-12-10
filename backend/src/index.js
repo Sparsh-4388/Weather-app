@@ -30,7 +30,7 @@ const frontendPath = path.join(__dirname, "../../frontend/dist");
 app.use(express.static(frontendPath));
 
 // 3️⃣ SPA fallback for React routing (only if not API route)
-app.get("*", (req, res) => {
+app.get("/.*/", (req, res) => {
   res.sendFile(path.join(frontendPath, "index.html"));
 });
 
