@@ -3,7 +3,7 @@ import { getWeatherByCity } from "../services/weatherService.js";
 
 const router = express.Router();
 
-router.get("/api/weather", async (req, res) => {
+router.get("/weather", async (req, res) => {
   const city = req.query.city;
   if (!city) {
     return res.status(400).json({ error: "City parameter is required" });
