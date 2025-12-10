@@ -63,7 +63,7 @@ export default function App() {
         </div>
       )}
 
-      {weatherData && (
+      {weatherData?.current && (
         <div className="results">
           <CurrentWeatherCard
             data={weatherData.current}
@@ -71,7 +71,7 @@ export default function App() {
           />
 
           <div className="forecast-grid">
-            {weatherData.forecast.map((item) => (
+            {(weatherData?.forecast || []).map((item) => (
               <ForecastCard key={item.dt_txt} data={item} />
             ))}
           </div>
